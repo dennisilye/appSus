@@ -4,11 +4,10 @@ import aboutPage from './pages/about-page.js';
 import bookDetails from './pages/book-details.js';
 import bookAdd from './pages/book-add.js';
 import emailApp from './apps/email/pages/email-app.js';
+import notesApp from './apps/notes/pages/notes-app.js';
 
 
-
-const routes = [
-    {
+const routes = [{
         path: '/',
         component: homePage
     },
@@ -31,7 +30,11 @@ const routes = [
     {
         path: '/email',
         component: emailApp
-    }
+    },
+    {
+        path: '/notes',
+        component: notesApp
+    },
 ];
 
 export const router = new VueRouter({ routes });
