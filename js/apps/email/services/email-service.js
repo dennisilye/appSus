@@ -20,7 +20,7 @@ export const emailService = {
 }
 
 function query() {
-    return storageService.query(EMAIL_KEY);
+    // return storageService.query(EMAIL_KEY);
     return email
 }
 

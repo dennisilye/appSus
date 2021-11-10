@@ -17,8 +17,6 @@ body {
   margin: 0;
 }
 
-
-
 /* car-app */
 
 .book-app {
@@ -37,7 +35,7 @@ body {
 
 .filter-title {
   background-color: transparent;
-  background-image: url('/img/looking_glass.png');
+  background-image: url("/img/looking_glass.png");
   background-position: 100% 50%;
   background-repeat: no-repeat;
   background-size: 21px 21px;
@@ -52,7 +50,6 @@ body {
   font-size: 12px;
   text-align: left;
 }
-
 
 /* details */
 
@@ -86,24 +83,24 @@ body {
 
 /* button */
 .btn {
-    font-family: "Fort-Light";
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 16px;
-    line-height: 1.42857143;
-    border-radius: 4px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  font-family: "Fort-Light";
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .btn.show-more {
@@ -127,7 +124,7 @@ body {
 /* home-page */
 
 .home-page {
-  background-image: url('/img/book-img1.jpg');
+  background-image: url("/img/book-img1.jpg");
   height: 400px;
   text-align: center;
 }
@@ -139,7 +136,6 @@ body {
 
 .home-page img {
   height: 40vh;
-  
 }
 
 /* edit */
@@ -275,4 +271,50 @@ body {
 
 .space-between {
   justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+/* email */
+
+.email-app {
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.657);
+  font-weight: bold;
+}
+
+.email-main-container {
+  width: 70vw;
+  margin-top: 20px;
+}
+
+.mail-body {
+  width: 100%;
+}
+
+.email-preview {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  box-shadow: inset 0 -1px 0 0 rgba(100,121,143,0.122);
+}
+
+.email-preveiw > * {
+  margin-inline-end: 40px;
+
+}
+
+.aside-nav-bar {
+  margin-right: 30px;
+}
+
+.aside-nav-bar > * {
+  width: 100px;
+  padding: 8px;
+  margin: 10px 20px;
+  border-bottom: orange 1px solid;
+  text-decoration: none;
 }

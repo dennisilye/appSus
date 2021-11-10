@@ -5,14 +5,14 @@ import emailPreview from './email-preview.js';
 export default {
     props: ['emails'],
     template: `
-        <ul class="email-list">
-            <li v-for="email in emails" :key="email.id" class="email-preview-container flex column align-center space-evenly" >
+        <ul class="email-main-container clean-list justify-center">
+            <li v-for="email in emails" :key="email.id" class="" >
                 <email-preview :email="email" @click.native="log" />
-                <div class="actions">
+                <!-- <div class="actions"> -->
                     <!-- <button @click="remove(book.id)" >X</button> -->
                     <!-- <router-link class="details" :to="'/book/'+book.id" >Details</router-link> -->
                     
-                </div>
+                <!-- </div> -->
             </li>
         </ul>
     `,

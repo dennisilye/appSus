@@ -1,14 +1,18 @@
 // import { bookService } from "../../../services/book-service.js";
 import { emailService } from "../services/email-service.js";
 import  emailList  from "../cmps/email-list.js"
+import  emailNavbar  from "../cmps/email-navbar.js"
 
 export default {
     template: `
-        <section class="email-app">
+        <section class="email-app flex">
             <!-- <book-filter @filtered="setFilter" /> -->
-            <h1>email app</h1>
+            
+            <email-navbar/>
             <!-- <router-link to="/addbooks">Add a Book</router-link>       -->
-            <email-list :emails="emails"  class="" />
+            <section>
+            <email-list :emails="emails"  class="email-main-container" />
+            </section>
             <!-- <book-details v-if="selectedBook" :book="selectedBook" @close="closeDetails"/> -->
             
             
@@ -48,6 +52,7 @@ export default {
     },
     components: {
         emailList,
+        emailNavbar
         // bookList,
         // bookFilter,
         // bookDetails,

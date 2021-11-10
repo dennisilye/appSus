@@ -1,11 +1,16 @@
 export default {
     props: ['email'],
     template: `
-        <div class="email-preview">
-            <h2 class="email-title">{{email.title}}</h2>
+        <section class="email-preview flex space-between">
+            <div class="stared"><span>*</span></div>
+            <div>{{email.to}}</div>
+            <div class="mail-body flex space-between">
+                <span>{{email.subject}}</span>
+                <span>{{email.sentAt}}</span>
+            </div>
             <!-- <img :src="book.thumbnail"/>
             <h3>{{currencyToShow}}{{book.listPrice.amount}} </h3>  -->
-        </div>
+        </section>
     `,
 
     computed: {
