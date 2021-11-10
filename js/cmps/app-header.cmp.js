@@ -2,7 +2,7 @@ export default {
     template: `
         <header class="app-header flex space-between align-center">
             <div class="logo flex align-center">
-                AppSus
+                AppSuss
                 <img class="main-logo" src="img/logoGif.gif" alt="">
             </div>
             
