@@ -3,6 +3,7 @@ import homePage from './pages/home-page.cmp.js';
 import aboutPage from './pages/about-page.js';
 import bookDetails from './pages/book-details.js';
 import bookAdd from './pages/book-add.js';
+import emailApp from './apps/email/pages/email-app.js';
 
 
 
@@ -27,6 +28,10 @@ const routes = [
         path: '/book/:bookId',
         component: bookDetails
     },
+    {
+        path: '/email',
+        component: emailApp
+    }
 ];
 
 export const router = new VueRouter({ routes });
