@@ -3,22 +3,28 @@ export default {
     template: `
         <section class="email-preview flex space-between">
             <div class="stared"><span>*</span></div>
-            <div>{{email.to}}</div>
-            <div class="mail-body flex space-between">
-                <span>{{email.subject}}</span>
-                <span>{{email.sentAt}}</span>
+            <span class="mail-sender">{{email.sender}}</span>
+            <div>
+                <span class="mail-subject">{{email.subject}}</span>
             </div>
+            <div class="mail-body flex space-between">
+                    <div class="mail-body flex space-between">
+                    <span class="">{{showEmailBody}}</span>
+                    <span>{{email.sentAt}}</span>
+                    </div>
+                
+            </div>  
             <!-- <img :src="book.thumbnail"/>
             <h3>{{currencyToShow}}{{book.listPrice.amount}} </h3>  -->
         </section>
     `,
 
     computed: {
-        // currencyToShow () {
-        //     if (this.book.listPrice.currencyCode === 'ILS') return '₪'
-        //     else if (this.book.listPrice.currencyCode === 'EUR') return '€'
-        //     else return '$'
+        showEmailBody() {
+            const emailBody = this.email.body;
+            if (emailBody.length > 20) return emailBody.substring(0, 20) + '...'
+            else return emailBody
+        }
 
-        // }
     }
 }

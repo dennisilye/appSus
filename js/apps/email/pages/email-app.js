@@ -20,22 +20,16 @@ export default {
     `,
     data() {
         return {
-            emails: [ {id: 'e101',
-            subject: 'Miss you!',
-            body: 'Would love to catch up sometimes',
-            isRead: false,
-            sentAt: 1551133930594,
-            to: 'momo@momo.com'}],
+            emails: [],
             selectedEmail: null,
             filterBy: null
 
         };
     },
     created() {
-        // this.books = emailService.query()
-        //     .then(books => this.books = books)
-        // this.emails = emailService.email;
-        // console.log(this.emails);
+        this.emails = emailService.query()
+            .then(emails => this.emails = emails)
+
 
     },
     methods: {
