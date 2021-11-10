@@ -2,7 +2,7 @@ export default {
     props: ['email'],
     template: `
         <section class="email-preview flex space-between">
-            <div class="stared"><span>*</span></div>
+            <div class="stared rating__star far fa-star"><span></span></div>
             <span class="mail-sender">{{email.sender}}</span>
             <div>
                 <span class="mail-subject">{{email.subject}}</span>
@@ -22,9 +22,15 @@ export default {
     computed: {
         showEmailBody() {
             const emailBody = this.email.body;
-            if (emailBody.length > 20) return emailBody.substring(0, 20) + '...'
+            if (emailBody.length > 50) return emailBody.substring(0, 40) + '...'
             else return emailBody
-        }
+        },
+        // showEmailDate() {
+        //     const date = this.email.sentAt;
+        //     console.log(typeof date);
+        //     return
+
+        // }
 
     }
 }
