@@ -1,15 +1,15 @@
 import { bookService } from '../services/book-service.js';
-import bookList from '../cmps/book-list.cmp.js';
-import bookFilter from '../cmps/book-filter.cmp.js';
+import bookList from '../cmp/book-list.cmp.js';
+import bookFilter from '../cmp/book-filter.cmp.js';
 import bookDetails from './book-details.js';
-import bookDescription from "../cmps/book-description.cmp.js"
+import bookDescription from "../cmp/book-description.cmp.js"
 
 
 export default {
     template: `
         <section class="book-app">
             <book-filter @filtered="setFilter" />
-            <router-link to="/addbooks">Add a Book</router-link>      
+            <router-link to="/book/addbooks">Add a Book</router-link>      
             <book-list :books="booksToShow" @selected="selectBook" class="book-list grid clean-list justify-center" />
             <book-details v-if="selectedBook" :book="selectedBook" @close="closeDetails"/>
             
@@ -50,9 +50,9 @@ export default {
             const { title, toPrice, fromPrice } = this.filterBy
             const searchStr = title.toLowerCase();
             const booksToShow = this.books.filter(book => {
-                return book.title.toLowerCase().includes(searchStr)
-                    && book.listPrice.amount >= fromPrice
-                    && book.listPrice.amount <= toPrice || !toPrice
+                return book.title.toLowerCase().includes(searchStr) &&
+                    book.listPrice.amount >= fromPrice &&
+                    book.listPrice.amount <= toPrice || !toPrice
             });
             return booksToShow;
 

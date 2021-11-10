@@ -26,7 +26,7 @@ export default {
             console.log('Logging.....');
         }
     },
-    components:{
+    components: {
         bookPreview
     }
 };

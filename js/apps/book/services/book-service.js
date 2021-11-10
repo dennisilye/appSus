@@ -1,8 +1,7 @@
-import { utilService } from './util-service.js';
-import { storageService } from './async-storage-service.js';
+import { utilService } from '../../../services/util-service.js';
+import { storageService } from '../../../services/async-storage-service.js';
 
-var gBooks = [
-    {
+var gBooks = [{
         "id": "OXeMG8wNskc",
         "title": "metus hendrerit",
         "subtitle": "mi est eros convallis auctor arcu dapibus himenaeos",
@@ -444,7 +443,7 @@ var gBooks = [
     }
 ]
 const BOOKS_KEY = 'books';
-_createbooks() 
+_createbooks()
 export const bookService = {
     query,
     remove,
@@ -452,7 +451,7 @@ export const bookService = {
     getById,
     getNextBookId,
     getNeighborBookId
-    
+
     // getEmptyCar,
 }
 
@@ -506,4 +505,3 @@ function getNeighborBookId(currBookId, diff) {
         return books[idx + diff];
     });
 }
-

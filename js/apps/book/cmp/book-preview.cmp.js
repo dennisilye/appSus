@@ -1,5 +1,3 @@
-
-
 export default {
     props: ['book'],
     template: `
@@ -11,7 +9,7 @@ export default {
     `,
 
     computed: {
-        currencyToShow () {
+        currencyToShow() {
             if (this.book.listPrice.currencyCode === 'ILS') return '₪'
             else if (this.book.listPrice.currencyCode === 'EUR') return '€'
             else return '$'

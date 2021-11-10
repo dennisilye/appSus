@@ -1,6 +1,6 @@
-import bookDescription from "../cmps/book-description.cmp.js"
+import bookDescription from "../cmp/book-description.cmp.js"
 import { bookService } from '../services/book-service.js';
-import bookReview from '../cmps/review-add-cmp.js';
+import bookReview from '../cmp/review-add-cmp.js';
 
 export default {
     template: `

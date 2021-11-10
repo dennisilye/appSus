@@ -24,7 +24,7 @@ export default {
         }
     },
     methods: {
-        resetReview(){
+        resetReview() {
             this.review = {
                 txt: '',
                 fullName: '',
@@ -38,7 +38,7 @@ export default {
         },
         changeColor(num) {
             this.review.rate = num;
-        
+
         }
 
 
