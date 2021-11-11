@@ -1,7 +1,7 @@
 export default {
     props: ['email'],
     template: `
-        <section class="email-preview flex space-between">
+        <section :class="{read: email.isRead}" class="email-preview flex space-between">
             <div class="stared rating__star far fa-star"><span></span></div>
             <span class="mail-sender">{{email.sender}}</span>
             <div>
@@ -31,6 +31,9 @@ export default {
         //     return
 
         // }
+        showIsEmailRead() {
+
+        }
 
     }
 }
