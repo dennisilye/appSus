@@ -6,7 +6,7 @@ export default {
     props: ['notes'],
     template: `
         <ul class="note-list">
-            <li v-for="note in notes" :key="note.id" class="note-preview-container flex column align-center space-evenly" >
+            <li v-for="note in notes" :key="note.id" class="book-preview-container flex column align-center space-evenly" > <!--class="note-preview-container flex column align-center space-evenly" -->
                 <notes-preview :note="note" @click.native="log" />
                 <div class="actions">
                     <!-- <button @click="remove(book.id)" >X</button> -->

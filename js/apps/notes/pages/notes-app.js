@@ -17,24 +17,14 @@ export default {
     `,
     data() {
         return {
-            notes: [{
-                id: "n101",
-                type: "note-txt",
-                isPinned: true,
-                info: {
-                    txt: "Fullstack Me Baby!"
-                }
-            }],
-            selectedNote: null, // ==> change to selectedNote
+            notes: [],
+            selectedNote: null,
             filterBy: null
-
         };
     },
     created() {
-        // this.notes = notesService.query()
-        //     .then(books => this.books = books)
-        // this.notes = notesService.note;
-        // console.log(this.notes);
+        this.notes = notesService.query()
+            .then(notes => this.notes = notes)
 
     },
     methods: {
@@ -51,6 +41,7 @@ export default {
     },
     components: {
         notesList,
+        notesService,
         // bookList,
         // bookFilter,
         // bookDetails,
