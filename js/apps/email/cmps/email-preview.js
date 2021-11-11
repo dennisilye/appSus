@@ -2,7 +2,7 @@ export default {
     props: ['email'],
     template: `
         <section :class="{read: email.isRead}" class="email-preview flex space-between">
-            <div class="stared rating__star far fa-star"><span></span></div>
+            <div @click.stop="starClicked" class="stared rating__star far fa-star"><span></span></div>
             <span class="mail-sender">{{email.sender}}</span>
             <div>
                 <span class="mail-subject">{{email.subject}}</span>
@@ -25,6 +25,7 @@ export default {
             if (emailBody.length > 50) return emailBody.substring(0, 40) + '...'
             else return emailBody
         },
+        
         // showEmailDate() {
         //     const date = this.email.sentAt;
         //     console.log(typeof date);
@@ -34,6 +35,12 @@ export default {
         showIsEmailRead() {
 
         }
+
+    },
+    methods: {
+        starClicked(){
+            console.log('star clicked');
+        },
 
     }
 }

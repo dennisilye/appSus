@@ -3,6 +3,7 @@ import { emailService } from "../services/email-service.js";
 import  emailList  from "../cmps/email-list.js"
 import  emailNavbar  from "../cmps/email-navbar.js"
 import emailCompose from '../cmps/email-compose.js';
+import emailDetails from "./email-details.js";
 
 export default {
     template: `
@@ -10,11 +11,13 @@ export default {
             <!-- <book-filter @filtered="setFilter" /> -->
             
             <email-navbar @composing="composing"></email-navbar>
-            <!-- <router-link to="/addbooks">Add a Book</router-link>       -->
-            <section>
-            <email-list :emails="emails"  class="email-main-container" />
-            </section>
-            <email-compose @composing="composing" v-if="isComposing"></email-compose>
+
+                <email-details v-if="selectedEmail"  :email="selectedEmail" class="email-main-container" />
+                <!-- <router-link to="/addbooks">Add a Book</router-link>       -->
+                <email-list  @selected="selectEmail" :emails="emails"  class="email-main-container" />
+            
+        
+        <email-compose @composing="composing" v-if="isComposing"></email-compose>
             <!-- <book-details v-if="selectedBook" :book="selectedBook" @close="closeDetails"/> -->
             
             
@@ -43,7 +46,11 @@ export default {
         composing() {
             console.log('composing');
             this.isComposing = !this.isComposing
-        }
+        },
+        selectEmail(email) {
+            this.selectedEmail = email;
+            this.$router.push(`email/${email.id}`);
+        },
 
 
 
@@ -54,7 +61,8 @@ export default {
     components: {
         emailList,
         emailNavbar,
-        emailCompose
+        emailCompose,
+        emailDetails
         // bookList,
         // bookFilter,
         // bookDetails,
