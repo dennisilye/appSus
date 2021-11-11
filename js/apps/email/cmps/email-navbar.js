@@ -1,11 +1,10 @@
 export default {
     template: `
     <nav class="aside-nav-bar flex column">
-       <a @click="$emit('editMail')" class="compose-btn clean-btn">COMPOSE</a>
-       <a @click="$emit('editMail')" class="compose-btn clean-btn">INBOX</a>
-       <a @click="$emit('editMail')" class="compose-btn clean-btn">COMPOSE</a>
-       <a @click="$emit('editMail')" class="compose-btn clean-btn">SENT</a>
-       <a @click="$emit('editMail')" class="compose-btn clean-btn">TRASH</a>
+       <a @click="$emit('composing')" class="compose-btn clean-btn">COMPOSE</a>
+       <a  class="compose-btn clean-btn">INBOX</a>
+       <a  class="compose-btn clean-btn">SENT</a>
+       <a  class="compose-btn clean-btn">TRASH</a>
 </nav>
         
     `,
