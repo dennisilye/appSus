@@ -208,7 +208,8 @@ const gEmails = [
 _createEmails()
 export const emailService = {
     gEmails,
-    query
+    query,
+    save
 
 }
 

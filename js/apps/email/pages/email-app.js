@@ -14,7 +14,7 @@ export default {
             <section>
             <email-list :emails="emails"  class="email-main-container" />
             </section>
-            <email-compose v-if="isComposing"></email-compose>
+            <email-compose @composing="composing" v-if="isComposing"></email-compose>
             <!-- <book-details v-if="selectedBook" :book="selectedBook" @close="closeDetails"/> -->
             
             
@@ -41,6 +41,7 @@ export default {
         //         .then(emails => this.emails = emails);
         // },
         composing() {
+            console.log('composing');
             this.isComposing = !this.isComposing
         }
 
