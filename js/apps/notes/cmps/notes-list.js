@@ -6,10 +6,10 @@ export default {
     props: ['notes'],
     template: `
         <ul class="note-list">
-            <li v-for="note in notes" :key="note.id" class="book-preview-container flex column align-center space-evenly" > <!--class="note-preview-container flex column align-center space-evenly" -->
+            <li v-for="note in notes" :key="note.id" class="note-list " > <!--class="note-preview-container flex column align-center space-evenly" -->
                 <notes-preview :note="note" @click.native="log" />
                 <div class="actions">
-                    <!-- <button @click="remove(book.id)" >X</button> -->
+                    
                     <!-- <router-link class="details" :to="'/book/'+book.id" >Details</router-link> -->
                     
                 </div>
@@ -17,14 +17,14 @@ export default {
         </ul>
     `,
     methods: {
-        // remove(bookId) {
-        //     this.$emit('remove', bookId);
-        // },
+        remove(noteId) {
+            this.$emit('remove', noteId);
+        },
         select(note) {
             this.$emit('selected', note);
         },
         log() {
-            console.log('Logging.....');
+            console.log('Logging.....1');
         }
     },
     components: {

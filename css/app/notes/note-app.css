@@ -1,0 +1,17 @@
+.note-list {
+    column-width: 200px;
+    column-count: 5;
+    column-fill: balance;
+    padding: 5px;
+    clear: both;
+    max-width: 100px;
+}
+
+.note-preview {
+    break-inside: avoid-column;
+    position: relative;
+    padding: 20px 25px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid rgba(226, 226, 226, 1);
+}

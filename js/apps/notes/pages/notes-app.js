@@ -4,12 +4,12 @@ import notesList from "../cmps/notes-list.js";
 
 export default {
     template: `
-        <section class="note-app">
+        <section class="note-app flex">
             <!-- <book-filter @filtered="setFilter" /> -->
             <h1>notes app</h1>
             
             <!-- <router-link to="/addbooks">Add a Book</router-link>       -->
-            <notes-list :notes="notes"  class="" />
+            <notes-list :notes="notes"  class="note-list" />
             <!-- <book-details v-if="selectedBook" :book="selectedBook" @close="closeDetails"/> -->
             
             
