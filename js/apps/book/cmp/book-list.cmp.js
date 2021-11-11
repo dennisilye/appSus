@@ -20,6 +20,7 @@ export default {
         //     this.$emit('remove', bookId);
         // },
         select(book) {
+            console.log('bookselected');
             this.$emit('selected', book);
         },
         log() {

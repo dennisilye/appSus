@@ -5,6 +5,7 @@ import bookDetails from './apps/book/pages/book-details.js';
 import bookAdd from './apps/book/pages/book-add.js';
 import emailApp from './apps/email/pages/email-app.js';
 import notesApp from './apps/notes/pages/notes-app.js';
+import emailDetails from './apps/email/pages/email-details.js';
 
 
 const routes = [{
@@ -30,6 +31,10 @@ const routes = [{
     {
         path: '/email',
         component: emailApp
+    },
+    {
+        path: '/email/:emailId',
+        component: emailDetails
     },
     {
         path: '/notes',
