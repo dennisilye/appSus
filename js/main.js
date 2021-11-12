@@ -1,5 +1,5 @@
 import bookApp from './apps/book/pages/book-app.js';
-import notesApp from './apps/notes/pages/notes-app.js';
+import notesApp from './apps/notes/pages/notes-app-cmp.js';
 import emailApp from './apps/email/pages/email-app.js';
 import appHeader from './cmps/app-header.cmp.js';
 import { router } from './routes.js';
