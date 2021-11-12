@@ -2,6 +2,7 @@ export default {
     props: ['email'],
     template: `
         <section :class="{read: email.isRead}" class="email-preview flex space-between">
+        <email-navbar @composing="composing"></email-navbar>
         <button @click.stop="emitMoveEmailToTrash(email)" class="email-delete">X</button>
             <div @click.stop="starClicked(email)" :class="{isStarred: email.isStarred}"  class="stared rating__star far fa-star"><span></span></div>
             <span class="mail-sender">{{email.sender}}</span>
@@ -15,8 +16,6 @@ export default {
                     </div>
                 
             </div>  
-            <!-- <img :src="book.thumbnail"/>
-            <h3>{{currencyToShow}}{{book.listPrice.amount}} </h3>  -->
         </section>
     `,
     data() {
@@ -31,16 +30,7 @@ export default {
             if (emailBody.length > 50) return emailBody.substring(0, 40) + '...'
             else return emailBody
         },
-
-        // showEmailDate() {
-        //     const date = this.email.sentAt;
-        //     console.log(typeof date);
-        //     return
-
-        // }
-        showIsEmailRead() {
-
-        }
+ 
 
     },
     methods: {
