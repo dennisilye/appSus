@@ -9,15 +9,16 @@ export default {
         <ul class="email-main-container clean-list justify-center">
         <li class="email-header flex">
           <!-- <span class="email-headere-del">Del</span> -->
-          <span class="email-header-star">Star</span>
-          <span class="email-header-name">Name</span>
-          <span class="email-header-send">Send</span>
+          <span class="email-header-name">Sender</span>
+          <div class="email-subject-container flex space-between">
           <span class="email-header-subject">Subject</span>
           <span class="email-header-date">Date</span>
+            </div>
         </li>
             <li v-for="email in emails" :key="email.id" class="" >
-                <!-- <router-link to="/email/+email.id" class="router"> -->
-                <email-preview  @click.native="select(email)" :email="email">         
+                <!-- <router-link to="/email/+email.id" class="router"> -->   
+                <email-preview v-on="$listeners"  @click.native="select(email)" :email="email">
+                             
                     </email-preview>
             
                 

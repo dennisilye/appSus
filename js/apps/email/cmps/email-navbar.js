@@ -4,7 +4,7 @@ export default {
        <a @click="$emit('composing')" class="compose-btn clean-btn">COMPOSE</a>
        <a  class="compose-btn clean-btn">INBOX</a>
        <a  class="compose-btn clean-btn">SENT</a>
-       <a  class="compose-btn clean-btn">TRASH</a>
+       <a to="/email/trash"  class="compose-btn clean-btn">TRASH</a>
 </nav>
         
     `,

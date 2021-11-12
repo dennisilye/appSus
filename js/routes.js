@@ -6,6 +6,7 @@ import bookAdd from './apps/book/pages/book-add.js';
 import emailApp from './apps/email/pages/email-app.js';
 import notesApp from './apps/notes/pages/notes-app-cmp.js';
 import emailDetails from './apps/email/pages/email-details.js';
+import emailTrash from './apps/email/pages/email-trash.js';
 
 
 const routes = [{
@@ -31,6 +32,10 @@ const routes = [{
     {
         path: '/email',
         component: emailApp
+    },
+    {
+        path: '/email/trash',
+        component: emailTrash
     },
     {
         path: '/email/:emailId',

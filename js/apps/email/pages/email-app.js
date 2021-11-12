@@ -1,25 +1,24 @@
 // import { bookService } from "../../../services/book-service.js";
 import { emailService } from "../services/email-service.js";
-import  emailList  from "../cmps/email-list.js"
-import  emailNavbar  from "../cmps/email-navbar.js"
+import emailList from "../cmps/email-list.js"
+import emailNavbar from "../cmps/email-navbar.js"
 import emailCompose from '../cmps/email-compose.js';
 import emailDetails from "./email-details.js";
+import emailFilter from "../cmps/email-filter.js";
+import emailTrash from "./email-trash.js";
 
 export default {
     template: `
+        <section >
+            <email-filter @filtered="setFilter"/>
         <section class="email-app flex">
-            <!-- <book-filter @filtered="setFilter" /> -->
-            
             <email-navbar @composing="composing"></email-navbar>
-
-                <email-details v-if="selectedEmail"  :email="selectedEmail" class="email-main-container" />
-                <!-- <router-link to="/addbooks">Add a Book</router-link>       -->
-                <email-list  @selected="selectEmail" :emails="emails"  class="email-main-container" />
+            <email-details v-if="selectedEmail"  :email="selectedEmail" class="email-main-container" />
+            <!-- <email-trash v-if="isInTrash"   @selected="selectEmail" :emails="trash"  class="email-main-container" /> -->
+            <email-list  @move-to-trash="MoveToTrash"  @selected="selectEmail" :emails="emailsToShow"  class="email-main-container" />
+            <email-compose @composing="composing" v-if="isComposing"></email-compose>
             
-        
-        <email-compose @composing="composing" v-if="isComposing"></email-compose>
-            <!-- <book-details v-if="selectedBook" :book="selectedBook" @close="closeDetails"/> -->
-            
+        </section>
             
         </section>
     `,
@@ -28,7 +27,10 @@ export default {
             emails: [],
             isComposing: false,
             selectedEmail: null,
-            filterBy: null
+            filterBy: null,
+            trash: [],
+            isInTrash: false
+
 
         };
     },
@@ -39,10 +41,11 @@ export default {
 
     },
     methods: {
-        // loadEmails() {
-        //     emailService.query()
-        //         .then(emails => this.emails = emails);
-        // },
+        MoveToTrash(deletedEmail) {
+            const emailIdx = this.emails.findIndex(email => deletedEmail.id === email.id)
+            this.trash.unshift(deletedEmail)
+            this.emails.splice(emailIdx, 1)
+        },
         composing() {
             console.log('composing');
             this.isComposing = !this.isComposing
@@ -51,22 +54,39 @@ export default {
             this.selectedEmail = email;
             this.$router.push(`email/${email.id}`);
         },
+        setFilter(filterBy) {
+            this.filterBy = filterBy;
+            console.log(this.filterBy);
+        }
 
 
 
     },
     computed: {
+        emailsToShow() {
+            if (!this.filterBy) return this.emails;
+            const { text, readOptions } = this.filterBy
+            const searchStr = text.toLowerCase();
+            console.log(text);
+            let emailsToShow = this.emails.filter(email => {
+                return email.body.toLowerCase().includes(searchStr) ||
+                    email.subject.toLowerCase().includes(searchStr) ||
+                    email.sender.toLowerCase().includes(searchStr)
+            });
+            return emailsToShow;
 
+
+
+        }
     },
     components: {
         emailList,
         emailNavbar,
         emailCompose,
-        emailDetails
-        // bookList,
-        // bookFilter,
-        // bookDetails,
-        // bookDescription
+        emailDetails,
+        emailFilter,
+        emailTrash
+       
 
     }
 };
