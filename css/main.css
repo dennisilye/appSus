@@ -3,6 +3,7 @@
 @import url('/css/app/book/book-app.css');
 @import url('/css/app/email/email-app.css');
 @import url('/css/app/notes/note-app.css');
+@import url('/css/animate.css');
 * {
     box-sizing: border-box;
 }
